@@ -161,6 +161,7 @@ programs.gamemode.enable = true;
 inputs.nix-software-center.packages.${system}.nix-software-center
   _1password-gui
 git
+steamtinkerlaunch
  ];
 
   # Some programs need SUID wrappers, can be configured further or are
