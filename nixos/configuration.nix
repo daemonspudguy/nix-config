@@ -160,7 +160,6 @@ programs.gamemode.enable = true;
   #  wget
 inputs.nix-software-center.packages.${system}.nix-software-center
   _1password-gui
-    gnomeExtensions.night-theme-switcher  
 git
  ];
 
