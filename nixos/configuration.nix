@@ -171,6 +171,7 @@ git
   #   enableSSHSupport = true;
   # };
 programs._1password-gui.enable = true;
+programs._1password-gui.polkitPolicyOwners = [ "daemonspudguy" ];
 programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
