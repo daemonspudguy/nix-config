@@ -18,6 +18,7 @@
 
     # other inputs
     nix-software-center.url = "github:vlinkz/nix-software-center";
+    nixos-conf-editor.url = "github:vlinkz/nixos-conf-editor";
 # rest of flake.nix
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
