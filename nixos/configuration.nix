@@ -25,6 +25,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 boot.kernelPackages = pkgs.linuxPackages_xanmod;
+boot.supportedFilesystems = [ "ntfs" ];
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -55,7 +56,7 @@ boot.kernelPackages = pkgs.linuxPackages_xanmod;
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
   programs.zsh.enable = true;
-boot.kernelParams = [ "radeon.si_support=0" "amdgpu.si_support=1" "radeon.cik_support=0" "amdgpu.cik_support=1" ];
+boot.kernelParams = [ "radeon.si_support=0" "amdgpu.si_support=1" "radeon.cik_support=0" "amdgpu.cik_support=1" "transparent_hugepage=never" ];
 hardware.opengl = {
   enable = true;
   driSupport = true;
@@ -196,5 +197,7 @@ programs.kdeconnect = {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
+  gtk.iconCache.enable = true;
+  virtualisation.vmware.host.enable = true;
 
 }
