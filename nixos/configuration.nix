@@ -82,6 +82,7 @@ programs.gamemode.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
+  sound.enableOSSEmulation = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -96,6 +97,9 @@ programs.gamemode.enable = true;
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  services.pipewire.wireplumber.enable = true;
+  services.pipewire.audio.enable = true;
+  services.pipewire.jack.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
