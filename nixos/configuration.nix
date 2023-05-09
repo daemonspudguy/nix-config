@@ -163,7 +163,7 @@ programs.gamemode.enable = true;
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-inputs.nix-software-center.packages.${system}.nix-software-center
+#inputs.nix-software-center.packages.${system}.nix-software-center
 inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
   _1password-gui
 git
