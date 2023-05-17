@@ -66,7 +66,7 @@
       nixosConfigurations = {
         # FIXME replace with your hostname
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs self system; };
           modules = [
               ({ self, system, ... }: {
             environment.systemPackages = with self.inputs.nix-alien.packages.${system}; [
