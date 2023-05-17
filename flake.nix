@@ -19,6 +19,7 @@
     # other inputs
     nix-software-center.url = "github:vlinkz/nix-software-center";
     nixos-conf-editor.url = "github:vlinkz/nixos-conf-editor";
+    nix-alien.url = "github:thiagokokada/nix-alien";
 # rest of flake.nix
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
@@ -67,6 +68,13 @@
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+              ({ self, system, ... }: {
+            environment.systemPackages = with self.inputs.nix-alien.packages.${system}; [
+              nix-alien
+            ];
+            # Optional, needed for `nix-alien-ld`
+            programs.nix-ld.enable = true;
+          })
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
           ];
