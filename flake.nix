@@ -68,7 +68,7 @@
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-              ./pkgs/nix-alien.nix
+             
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
           ];
