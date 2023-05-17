@@ -66,15 +66,9 @@
       nixosConfigurations = {
         # FIXME replace with your hostname
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs self; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
-              ({ self, system, ... }: {
-            environment.systemPackages = with self.inputs.nix-alien.packages.${system}; [
-              nix-alien
-            ];
-            # Optional, needed for `nix-alien-ld`
-            programs.nix-ld.enable = true;
-          })
+              ./pkgs/nix-alien.nix
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
           ];
