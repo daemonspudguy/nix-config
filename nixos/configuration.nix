@@ -156,6 +156,10 @@ programs.gamemode.enable = true;
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+      substituters = [ "https://snowflakeos.cachix.org/" ];
+      trusted-public-keys = [
+    "snowflakeos.cachix.org-1:gXb32BL86r9bw1kBiw9AJuIkqN49xBvPd1ZW8YlqO70="
+  ];
     };
   };
   # List packages installed in system profile. To search, run:
@@ -163,11 +167,12 @@ programs.gamemode.enable = true;
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-#inputs.nix-software-center.packages.${system}.nix-software-center
+inputs.nix-software-center.packages.${system}.nix-software-center
 inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
   _1password-gui
 git
 #steamtinkerlaunch
+pkgs.gnome.gnome-boxes
  ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -202,6 +207,10 @@ programs.kdeconnect = {
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
   gtk.iconCache.enable = true;
-  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = false;
+  virtualisation.virtualbox.host.addNetworkInterface = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.libvirtd.enable = true;
 
 }
