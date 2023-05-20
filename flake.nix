@@ -71,6 +71,7 @@
              
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
+            ./nix-alien/default.nix
           ];
         };
       };
