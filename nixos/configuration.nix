@@ -172,7 +172,7 @@ inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
   _1password-gui
 git
 inputs.nix-alien.packages.${system}.nix-alien
-#steamtinkerlaunch
+steamtinkerlaunch
 pkgs.gnome.gnome-boxes
  ];
 
