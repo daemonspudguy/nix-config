@@ -171,6 +171,7 @@ inputs.nix-software-center.packages.${system}.nix-software-center
 inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
   _1password-gui
 git
+nix-alien
 #steamtinkerlaunch
 pkgs.gnome.gnome-boxes
  ];
@@ -188,6 +189,8 @@ programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
 };
+programs.nix-ld.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
