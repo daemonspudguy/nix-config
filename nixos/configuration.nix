@@ -38,6 +38,7 @@ boot.supportedFilesystems = [ "ntfs" ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -172,8 +173,8 @@ inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
   _1password-gui
 git
 inputs.nix-alien.packages.${system}.nix-alien
-steamtinkerlaunch
 pkgs.gnome.gnome-boxes
+    timidity
  ];
 
   # Some programs need SUID wrappers, can be configured further or are
