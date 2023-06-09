@@ -175,6 +175,7 @@ git
 inputs.nix-alien.packages.${system}.nix-alien
 pkgs.gnome.gnome-boxes
     timidity
+    gamescope
  ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -191,6 +192,22 @@ programs.kdeconnect = {
     package = pkgs.gnomeExtensions.gsconnect;
 };
 programs.nix-ld.enable = true;
+nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXinerama
+        xorg.libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib
+        libkrb5
+        keyutils
+];
+};
+};
 
   # List services that you want to enable:
 
